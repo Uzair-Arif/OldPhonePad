@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OldPhonePad.Console;
+using OldPhonePad.Console.ServiceConfigurator;
 using OldPhonePad.Core.Interfaces;
 
 var serviceProvider = ServiceConfigurator.Configure();

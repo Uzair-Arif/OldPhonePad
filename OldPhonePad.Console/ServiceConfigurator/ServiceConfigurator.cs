@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using OldPhonePad.Core.Interfaces;
 using OldPhonePad.Core.Services;
 
-namespace OldPhonePad.Console;
+namespace OldPhonePad.Console.ServiceConfigurator;
 
 public static class ServiceConfigurator
 {
