@@ -58,7 +58,6 @@ OldPhonePad.Console/         --> Entry point (Program.cs)
 OldPhonePad.Core/            --> Business logic and service interfaces
 ├── Interfaces/              --> IKeyMapProvider, IOldPhoneInterpreter
 ├── Services/                --> OldPhoneInterpreter, OldPhoneKeyMap
-├── DependencyInjection/     --> Extension method for DI setup
 OldPhonePad.Tests/           --> xUnit test cases for all scenarios
 ```
 
