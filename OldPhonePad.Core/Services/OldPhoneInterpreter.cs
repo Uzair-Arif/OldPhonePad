@@ -22,31 +22,31 @@ public class OldPhoneInterpreter : IOldPhoneInterpreter
 
         foreach (char current in input)
         {
-            if (current == '#')
+            switch (current)
             {
-                FlushBuffer(buffer, result);
-            }
-            else if (current == '*')
-            {
-                FlushBuffer(buffer, result);
-                if (result.Length > 0)
-                    result.Length--; // backspace
-            }
-            else if (current == ' ')
-            {
-                FlushBuffer(buffer, result); // pause between same key
-            }
-            else if (char.IsDigit(current))
-            {
-                if (buffer.Length == 0 || buffer[0] == current)
-                {
-                    buffer.Append(current); // keep building
-                }
-                else
-                {
-                    FlushBuffer(buffer, result); // flush previous
-                    buffer.Append(current);      // start new
-                }
+                case '#':
+                    FlushBuffer(buffer, result);
+                    break;
+                case '*':
+                    FlushBuffer(buffer, result);
+                    if (result.Length > 0)
+                        result.Length--; // backspace
+                    break;
+                case ' ':
+                    FlushBuffer(buffer, result); // pause between same key
+                    break;
+                default:
+                    if (char.IsDigit(current))
+                    {
+                        if (buffer.Length == 0 || buffer[0] == current)
+                            buffer.Append(current); // keep building
+                        else
+                        {
+                            FlushBuffer(buffer, result); // flush previous
+                            buffer.Append(current);      // start new
+                        }
+                    }
+                    break;
             }
         }
 
